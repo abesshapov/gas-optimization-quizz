@@ -27,5 +27,41 @@ contract LoopsTest is Test {
 }
 
 contract LoopsOptimizedTest is Test {
-/* YOUR SOLUTION GOES HERE */
+    LoopsOptimized loops;
+
+    function setUp() public {
+        loops = new LoopsOptimized();
+    }
+
+    function test_for() public view {
+        loops.loopFor();
+    }
+
+    function test_while() public view {
+        loops.loopWhile();
+    }
+
+    function test_doWhile() public view {
+        loops.loopDoWhile();
+    }
+}
+
+contract LoopsHyperOptimizedTest is Test {
+    LoopsHyperOptimized loops;
+
+    function setUp() public {
+        loops = new LoopsHyperOptimized();
+    }
+
+    function test_for() public view {
+        loops.loopFor();
+    }
+
+    function test_while() public view {
+        loops.loopWhile();
+    }
+
+    function test_doWhile() public view {
+        loops.loopDoWhile();
+    }
 }
