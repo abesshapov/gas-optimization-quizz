@@ -13,7 +13,13 @@ contract CalldataMemory is ICalldataMemory {
 }
 
 contract CalldataMemoryOptimized is ICalldataMemory {
-    function add(uint256[] memory myArray) external pure returns (uint256 sum) {
-        /* YOUR SOLUTION GOES HERE */
+    function add(
+        uint256[] calldata myArray
+    ) external pure returns (uint256 sum) {
+        unchecked {
+            for (uint256 i; i < myArray.length; ) {
+                sum = sum + myArray[i++];
+            }
+        }
     }
 }
