@@ -42,8 +42,8 @@ contract LoopsOptimized is ILoops {
     }
 
     function loopWhile() public pure {
-        uint256 sum = 0;
-        uint256 i = 0;
+        uint256 sum;
+        uint256 i;
         unchecked {
             while (i < 10) {
                 sum = sum + i++;
@@ -52,8 +52,8 @@ contract LoopsOptimized is ILoops {
     }
 
     function loopDoWhile() public pure {
-        uint256 sum = 0;
-        uint256 i = 0;
+        uint256 sum;
+        uint256 i;
 
         unchecked {
             do {

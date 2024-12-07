@@ -19,7 +19,14 @@ contract Errors is IErrors {
 }
 
 contract ErrorsOptimized is IErrors {
-    /* YOUR SOLUTION GOES HERE */
+    address private immutable owner;
 
-    function call() public view {}
+    error Trespasser();
+
+    modifier onlyOwner() {
+        if (owner != msg.sender) revert Trespasser();
+        _;
+    }
+
+    function call() public view onlyOwner {}
 }
