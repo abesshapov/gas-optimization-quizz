@@ -13,7 +13,10 @@ contract Swap is ISwap {
 }
 
 contract SwapOptimized is ISwap {
-    function swap(uint256 a, uint256 b) public pure returns (uint256, uint256) {
-        /* YOUR SOLUTION GOES HERE */
+    function swap(
+        uint256 a,
+        uint256 b
+    ) public pure returns (uint256 resA, uint256 resB) {
+        (resA, resB) = (b, a);
     }
 }
